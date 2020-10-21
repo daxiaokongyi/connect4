@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  text-shadow: 0.5rem 0.5rem 0.5rem grey;
+}
+
+/* game board table */
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+  border-radius: 0.5rem;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  /* TODO: make into circles */
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%; 
+  animation-name: dropDown;
+  animation-duration: 1000ms;
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.p1 {
+  /* background-color: red; */
+  background: radial-gradient(circle, rgb(202, 67, 57) 0%, rgb(225, 227, 235) 100%);
+}
+
+.p2 {
+  /* background-color: blue; */
+  background: radial-gradient(circle, rgb(27, 37, 175) 0%, rgb(225, 227, 235) 100%);
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px grey;
+  border-radius: 0.5rem;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
